@@ -10,8 +10,8 @@ pygments: true
 #
 title : Yet another blog
 tagline: In code we trust
-author : mxpaul
-  name : 
+author :
+  name : mxpaul
   email : mmonk@cpan.org
   github : mxpaul
   twitter : username
