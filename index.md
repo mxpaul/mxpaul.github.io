@@ -1,8 +1,10 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title : Archive 
+header : Post Archive
+group: navigation
 ---
 {% include JB/setup %}
 
-Hello, world
+{% assign posts_collate = site.posts %}
+{% include JB/posts_collate %}
