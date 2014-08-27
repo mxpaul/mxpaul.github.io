@@ -1,7 +1,8 @@
 ---
-title: Hello
-layout: post
+layout: page
+title: Hello World!
+tagline: Supporting tagline
 ---
+{% include JB/setup %}
 
 Hello, world
-

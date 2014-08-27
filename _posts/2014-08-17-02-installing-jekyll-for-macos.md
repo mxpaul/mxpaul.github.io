@@ -70,3 +70,7 @@ index 754ab53..b3216fa 100644
      <div class="content">
        {{ content }}
 {% endhighlight%}
+
+Ссылка на [stackoverflow](http://stackoverflow.com/questions/14147167/trying-to-print-post-date-in-jekyll-fails-with-undefined-method-strftime)
+которая помогла решить вопрос.
+
