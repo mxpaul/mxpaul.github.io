@@ -29,13 +29,13 @@ This SIM cards I was only able to find at AIS offices. So I just addressed a per
 3G internet for 69 baht per week", and they took my passport, my money, my phone and in half an hour
 all was done.
 
-Every week i receive SMS "Your weekly internet gonna die. Press *777*723# and dial to continue". 
+Every week i receive SMS "Your weekly internet gonna die. Press \*777\*723# and dial to continue". 
 Today i tried and got an error message "Try again blah blah blah". I tried. Then i tired. The real 
-combination was *777*731# and dial.
+combination was \*777\*731# and dial.
 
-To check balance in one-2call AIS use *121# and dial.
+To check balance in one-2call AIS use \*121# and dial.
   
 To credit an account I go into seven elleven. They decline to put 80 baht, only 100. So i suffer, but 
 not to much. I give 100 Bt to seller, say "Put in one-2-call", they give me a paper wirh 16-digit code.
-I take my phone, press *120*<16-digit-code># and dial. If everything is fine, i got SMS aith my payment
+I take my phone, press \*120\*<16-digit-code># and dial. If everything is fine, i got SMS aith my payment
 confirmition. 
