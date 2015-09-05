@@ -70,3 +70,22 @@ Now it's done and i have to install Fedora LXDE spin onto my mac mini. I have do
 iso image yesterday and put it on a USB stick with dd command under my CentOS 6. I failed 
 to do that on Mac Mini, but i believe that is possible.
 
+Spent 2 hours trying to install fedora and have it boot. Guess what? It fucking replaced rEFInd
+with grub2.
+
+Trying to reinstall rEFInd under fedora, but just install rpm is not enougth.
+
+Ok, i downloaded binary zip archive and followed manual linux install instructions. Now i have rEFInd
+working and is able to boot OS X.
+
+    unzip refind-bin-*.zip
+    cd refind-bin*
+    cp -r refind /boot/efi/EFI/
+		cd /boot/efi/EFI/refind
+    rm refind_ia32.efi
+    rm -r drivers_ia32
+    mv refind.conf-sample refind.conf
+    efibootmgr -c -l \\EFI\\refind\\refind_x64.efi -L rEFInd
+
+This last command was what rpm post install script complaining about. As it succeed i was able
+to boot MacOs and Fedora 22 on the same Mac Mini. Make WiFi work is the next chellenge.
