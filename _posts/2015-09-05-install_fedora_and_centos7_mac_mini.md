@@ -95,3 +95,9 @@ to boot MacOs and Fedora 22 on the same Mac Mini. Make WiFi work is the next che
   * [elrepo instructions for akmod-wl](http://elrepo.org/tiki/wl-kmod)
   * [Chromium repo for Fedora](http://copr.fedoraproject.org/coprs/spot/chromium/)
 
+## Install broadcom wifi in Fedora 22
+
+    dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-22.noarch.rpm
+    dnf install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-22.noarch.rpm
+    dnf install kmod-wl
+
