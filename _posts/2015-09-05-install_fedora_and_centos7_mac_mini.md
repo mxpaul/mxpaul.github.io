@@ -89,3 +89,9 @@ working and is able to boot OS X.
 
 This last command was what rpm post install script complaining about. As it succeed i was able
 to boot MacOs and Fedora 22 on the same Mac Mini. Make WiFi work is the next chellenge.
+
+## Useful links
+
+  * [elrepo instructions for akmod-wl](http://elrepo.org/tiki/wl-kmod)
+  * [Chromium repo for Fedora](http://copr.fedoraproject.org/coprs/spot/chromium/)
+
