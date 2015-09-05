@@ -114,3 +114,21 @@ What the Fuck?
 
 20 min later: Ok, this was a kernel update. I am still able to boot 4.0 kernel, but 4.1 is now the default in grub
 
+Installing driver with 
+
+    dnf install kmod-wl
+
+was probably bad idea. I did this instead
+
+    dnf install kmod-wl-4.1.6-200.fc22.x86_64.x86_64
+    dnf install kmod-wl-4.0.4-301.fc22.x86_64.x86_64
+
+After reboot i have my WiFi working. Now it is time to clean my grub config off all that broken menu 
+items pointing to my OS X.
+
+Well, it's complicated (Fuck grub 2 and Fedora). I'll stop here for today and better install Fedora to my 
+second Mac Mini. This way at least i can remove cables and go on later with working wifi connection.
+
+Well, there is 
+
+
