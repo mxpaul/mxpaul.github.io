@@ -101,3 +101,16 @@ to boot MacOs and Fedora 22 on the same Mac Mini. Make WiFi work is the next che
     dnf install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-22.noarch.rpm
     dnf install kmod-wl
 
+Reboot the system and.... It dows not boot anymore! Fuck!
+Fedora fails to boot and asks me for a root password. If i do
+
+    systemctl default
+
+It writes something like
+
+    Error getting authority: Error initializing authority: Could not connect: No such file or directory (g-io-error-quark, 1)
+
+What the Fuck?
+
+20 min later: Ok, this was a kernel update. I am still able to boot 4.0 kernel, but 4.1 is now the default in grub
+
