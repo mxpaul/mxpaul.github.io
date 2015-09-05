@@ -41,17 +41,17 @@ I download rEFInd as a binary zip archive at http://sourceforge.net/projects/ref
 
 Command to ensure i have 64 bit arch on my OS X
 
-  ioreg -l -p IODeviceTree | grep firmware-abi
+    ioreg -l -p IODeviceTree | grep firmware-abi
 
 Next, i mount my esp as described ar rEFInd "Manual OS X install" page
 
-  mkdir /Volumes/esp
-  mount -t msdos /dev/disk0s1 /Volumes/esp
+    mkdir /Volumes/esp
+    mount -t msdos /dev/disk0s1 /Volumes/esp
 
 I unpack  downloaded zip archive with funder (unzip, however, should do the job as well)
 Change into unpacked directory and just run install.sh
 
-  sh install.sh
+    sh install.sh
 
 I have some outut stating thet all went good. I reboot and a see boot loader screen with
 OS X as the only option. 
