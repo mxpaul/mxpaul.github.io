@@ -25,16 +25,16 @@ Find this lines:
 
 Add this lines 
 
-    	<keybind key="C-A-L">
-           <action name="Execute">
-             <command>xscreensaver-command -lock</command>
-           </action>
-        </keybind>
-        <keybind key="W-L">
-          <action name="Execute">
-            <command>xscreensaver-command -lock</command>
-          </action>
-        </keybind>
+    <keybind key="C-A-L">
+    	<action name="Execute">
+    		<command>xscreensaver-command -lock</command>
+    	</action>
+    </keybind>
+    <keybind key="W-L">
+    	<action name="Execute">
+    		<command>xscreensaver-command -lock</command>
+    	</action>
+    </keybind>
 
 Save file and close the editor ( :wq<ENTER> in vim ). Then run
 
