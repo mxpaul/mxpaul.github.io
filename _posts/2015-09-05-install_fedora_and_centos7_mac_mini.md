@@ -9,7 +9,7 @@ tags: ["centos", "fedora", "linux", "rEFInd" ]
 
 # Why
 
-OS X is a piece of shit. I can tell thet after one year of using it on both Mac Mini and MacBooc air.
+OS X is a piece of shit. I can tell that after one year of using it on both Mac Mini and MacBook Air.
 
 # What
 
@@ -29,6 +29,9 @@ My plan is:
   * Build linux drivers for fucking broadcom WiFi used in Mac Mini based on elrepo instructions
 
 # Log
+
+UPDATE: read all, if you want to repeat my steps as there are some broken commands in text.
+So, read entire poste before you do anything with your system. 
 
 First of all i place my mac mini where i have a wire, so i will have internet access after 
 installing Fedora ( booting with live CD proved there is no WiFi driver for Broadcom in Fedora) 
@@ -113,4 +116,24 @@ It writes something like
 What the Fuck?
 
 20 min later: Ok, this was a kernel update. I am still able to boot 4.0 kernel, but 4.1 is now the default in grub
+
+Installing driver with 
+
+    dnf install kmod-wl
+
+was probably bad idea. I did this instead
+
+    dnf install kmod-wl-4.1.6-200.fc22.x86_64.x86_64
+    dnf install kmod-wl-4.0.4-301.fc22.x86_64.x86_64
+
+After reboot i have my WiFi working. Now it is time to clean my grub config off all that broken menu 
+items pointing to my OS X.
+
+Well, it's complicated (Fuck grub 2 and Fedora). I'll stop here for today and better install Fedora to my 
+second Mac Mini. This way at least i can remove cables and go on later with working wifi connection.
+
+2015-09-06 update:
+Btw, my wifi connection speed is really high in fedora. In MacOS i suffered with 300kbps, while in fedora
+i have rates about 3.5 megabytes per second. 10 times faster! 
+
 
