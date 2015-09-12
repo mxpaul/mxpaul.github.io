@@ -21,7 +21,7 @@
 	</script>
 
 	<style>
-		#vk_comments { 
+		#vk_comments, #vk_like { 
 			margin: 10px auto 0;
 		}
 	</style>
@@ -65,6 +65,11 @@
   </div>
 </div>
 
+<!-- Put this div tag to the place, where the Like block will be -->
+<div id="vk_like"></div>
+<script type="text/javascript">
+VK.Widgets.Like("vk_like", {type: "button"});
+</script>
 <!-- Put this div tag to the place, where the Comments block will be -->
 <div id="vk_comments"></div>
 <script type="text/javascript">
