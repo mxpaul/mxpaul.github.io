@@ -5,7 +5,6 @@ description: "Tricks"
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 ### Why this page?
 

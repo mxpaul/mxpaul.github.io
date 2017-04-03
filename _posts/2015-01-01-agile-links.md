@@ -5,7 +5,6 @@ description: "Evernote is dead. Let's go offline"
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 [Хабропост про agile со списком людей и ссылками](http://habrahabr.ru/post/148238/)
 

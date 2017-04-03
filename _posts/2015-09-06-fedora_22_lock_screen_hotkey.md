@@ -5,7 +5,6 @@ description: "And Win+L"
 category: 
 tags: ["fedora", "linux", "lxde", "openbox" ]
 ---
-{% include JB/setup %}
 
 # Problem
 

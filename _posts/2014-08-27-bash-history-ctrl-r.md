@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [bash]
 ---
-{% include JB/setup %}
 
 ##Зачем это надо?
 

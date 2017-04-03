@@ -5,7 +5,6 @@ description: "OS X is shit, i want linux"
 category: 
 tags: ["centos", "fedora", "linux", "rEFInd" ]
 ---
-{% include JB/setup %}
 
 # Why
 
