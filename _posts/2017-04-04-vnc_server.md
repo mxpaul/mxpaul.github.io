@@ -278,11 +278,11 @@ See what rules we have by default
 
 Drop unknown incoming connections
 
-	[root@35632 ~]# iptables -P INPUT DROP
+	# iptables -P INPUT DROP
 
 Save this configuration after reboot
 
-	[root@35632 ~]# service iptables save
+	# service iptables save
 	iptables: Saving firewall rules to /etc/sysconfig/iptables:[  OK  ]
 
 Now we only may reach our server via ssh at port 22.
@@ -325,7 +325,7 @@ autossh writes to syslog
 	tmpfs            1048576       0   1048576   0% /sys/fs/cgroup
 	tmpfs             209716       0    209716   0% /run/user/0
 	tmpfs             209716       0    209716   0% /run/user/1000
-	[root@35632 ~]# df -i
+	# df -i
 	Filesystem      Inodes IUsed   IFree IUse% Mounted on
 	/dev/simfs     1600000 26658 1573342    2% /
 	devtmpfs        262144    57  262087    1% /dev
