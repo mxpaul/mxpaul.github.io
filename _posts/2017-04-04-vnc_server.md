@@ -25,8 +25,8 @@ tags: ["centos7", "linux", "vnc", "tigervnc", "remote" ]
 
 # Reference documentation
 
-[Digital Ocean: CentOS 7 vnc server setup](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-remote-access-for-the-gnome-desktop-on-centos-7)
-[Install MATE desktop in CentOS 7](http://browncoati.com/posts/centos_7_with_mate.html)
+* [Digital Ocean: CentOS 7 vnc server setup](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-remote-access-for-the-gnome-desktop-on-centos-7)
+* [Install MATE desktop in CentOS 7](http://browncoati.com/posts/centos_7_with_mate.html)
 
 
 # Set up user access to server
@@ -34,18 +34,18 @@ tags: ["centos7", "linux", "vnc", "tigervnc", "remote" ]
 
 Add non-root user with sudo access
 
-	# useradd -c "superwong" wong
-	# usermod -a -G wheel wong
-	# passwd wong
+	# useradd -c "supersuperman" superman
+	# usermod -a -G wheel superman
+	# passwd superman
 
 From fedora: create ssh key for our new user and push it to vnc server
 
-	$ ssh-keygen -b 4096 -C 'wong from fedora' -N '' -f ~/.ssh/vncwong
+	$ ssh-keygen -b 4096 -C 'superman from fedora' -N '' -f ~/.ssh/vncsuperman
 	Generating public/private rsa key pair.
-	Your identification has been saved in /home/wong/.ssh/vncwong.
-	Your public key has been saved in /home/wong/.ssh/vncwong.pub.
+	Your identification has been saved in /home/superman/.ssh/vncsuperman.
+	Your public key has been saved in /home/superman/.ssh/vncsuperman.pub.
 	The key fingerprint is:
-	SHA256:QODVOlZkFX0XcYQDGXBo9S6BYLWnxljnkcwLrZ85MIo wong from fedora
+	SHA256:QODVOlZkFX0XcYQDGXBo9S6BYLWnxljnkcwLrZ85MIo superman from fedora
 	The key's randomart image is:
 	+---[RSA 4096]----+
 	|    ..oo=o=*=+ ==|
@@ -61,20 +61,20 @@ From fedora: create ssh key for our new user and push it to vnc server
 
 In file ~/.ssh/config add our server ip for fast access
 
-	Host vncwong
+	Host vncsuperman
 	  HostName 2.2.2.2
-	  User wong
+	  User superman
 	  Port 22
-	  IdentityFile ~/.ssh/vncwong
+	  IdentityFile ~/.ssh/vncsuperman
 
 
 Copy new ssh key to server:
 
-	$ ssh-copy-id vncwong
+	$ ssh-copy-id vncsuperman
 
-Now wong may login to vnc server with
+Now superman may login to vnc server with
 
-	$ ssh vncwong
+	$ ssh vncsuperman
 
 # Install X11 and MATE desktop
 
@@ -84,11 +84,11 @@ Now wong may login to vnc server with
 
 Edit new service (unit) file
 
-	# sed -i -e 's/<USER>/wong/' -e 's|/usr/bin/vncserver %i|/usr/bin/vncserver %i -geometry 1280x1024|' /etc/systemd/system/vncserver@:4.service
+	# sed -i -e 's/<USER>/superman/' -e 's|/usr/bin/vncserver %i|/usr/bin/vncserver %i -geometry 1280x1024|' /etc/systemd/system/vncserver@:4.service
 
 or
 
-	# perl -lnp -i -e 's/<USER>/wong/; s|/usr/bin/vncserver %i\K| -geometry 1280x1024|;' /etc/systemd/system/vncserver@:4.service
+	# perl -lnp -i -e 's/<USER>/superman/; s|/usr/bin/vncserver %i\K| -geometry 1280x1024|;' /etc/systemd/system/vncserver@:4.service
 
 Check the difference
 
@@ -100,12 +100,12 @@ Check the difference
 	 # Quick HowTo:
 	 # 1. Copy this file to /etc/systemd/system/vncserver@.service
 	-# 2. Edit /etc/systemd/system/vncserver@.service, replacing <USER>
-	+# 2. Edit /etc/systemd/system/vncserver@.service, replacing wong
+	+# 2. Edit /etc/systemd/system/vncserver@.service, replacing superman
 	 #    with the actual user name. Leave the remaining lines of the file unmodified
 	-#    (ExecStart=/usr/sbin/runuser -l <USER> -c "/usr/bin/vncserver %i"
 	-#     PIDFile=/home/<USER>/.vnc/%H%i.pid)
-	+#    (ExecStart=/usr/sbin/runuser -l wong -c "/usr/bin/vncserver %i -geometry 1280x1024"
-	+#     PIDFile=/home/wong/.vnc/%H%i.pid)
+	+#    (ExecStart=/usr/sbin/runuser -l superman -c "/usr/bin/vncserver %i -geometry 1280x1024"
+	+#     PIDFile=/home/superman/.vnc/%H%i.pid)
 	 # 3. Run `systemctl daemon-reload`
 	 # 4. Run `systemctl enable vncserver@:<display>.service`
 	 #
@@ -115,8 +115,8 @@ Check the difference
 	 ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
 	-ExecStart=/usr/sbin/runuser -l <USER> -c "/usr/bin/vncserver %i"
 	-PIDFile=/home/<USER>/.vnc/%H%i.pid
-	+ExecStart=/usr/sbin/runuser -l wong -c "/usr/bin/vncserver %i -geometry 1280x1024"
-	+PIDFile=/home/wong/.vnc/%H%i.pid
+	+ExecStart=/usr/sbin/runuser -l superman -c "/usr/bin/vncserver %i -geometry 1280x1024"
+	+PIDFile=/home/superman/.vnc/%H%i.pid
 	 ExecStop=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
 	 
 	 [Install]
@@ -128,7 +128,7 @@ Make systemd reload unit files
 
 Login as regular user and create vnc password
 
-	$ ssh vncwong
+	$ ssh vncsuperman
 	$ vncpasswd 
 	Password:
 	Verify:
@@ -291,7 +291,7 @@ Now we only may reach our server via ssh at port 22.
 
 Run locally (in fedora or OSX)
 
-	$ ssh -L 5904:127.0.0.1:5904 vncwong -N
+	$ ssh -L 5904:127.0.0.1:5904 vncsuperman -N
 
 Now you should be able to connect with Tiger VNC viewer to address
 
@@ -303,12 +303,12 @@ To make ssh tunnel persistent install autossh
 
 And start ssh as
 
-	$ autossh -M 20000 -L 5904:127.0.0.1:5904 vncwong -N
+	$ autossh -M 20000 -L 5904:127.0.0.1:5904 vncsuperman -N
 
 Here 20000 is a randomly selected port used by autossh to monitor connection availability.
 Check for -f option which makes autossh go background
 
-	$ autossh -f -M 20000 -L 5904:127.0.0.1:5904 vncwong -N
+	$ autossh -f -M 20000 -L 5904:127.0.0.1:5904 vncsuperman -N
 
 autossh writes to syslog
 
